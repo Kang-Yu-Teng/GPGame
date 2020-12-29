@@ -354,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   energyBar: {fileID: 0}
-  movePower: 10
+  movePower: 5
   jumpPower: 25
   bulletSpawnOffset: 4
   maxEnergy: 100
