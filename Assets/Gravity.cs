@@ -28,7 +28,10 @@ public class Gravity : MonoBehaviour
             GameObject item = itemCollider2D.gameObject;
             Vector3 forceDirection = (gameObject.transform.position - item.transform.position);
             forceDirection[2] = 0;
-            item.GetComponent<Rigidbody2D>().AddForce(forceDirection * Gforce * Time.deltaTime,ForceMode2D.Impulse);              
+            var rb = item.GetComponent<Rigidbody2D>();
+            if(rb){
+                rb.AddForce(forceDirection * Gforce * Time.deltaTime,ForceMode2D.Impulse);              
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         [SerializeField]
         private GameObject progressLabel;
 
-        Text roomName;
+        public Text roomName;
 
 
         #endregion

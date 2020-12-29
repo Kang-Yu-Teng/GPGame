@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6462110822199178230}
   - component: {fileID: 6462110822199178231}
   - component: {fileID: 3073388610073451874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _reeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}

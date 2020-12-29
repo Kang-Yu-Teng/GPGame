@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 918161397962477045}
   - component: {fileID: 918161397962477044}
   - component: {fileID: -3448842508838514982}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _con_freeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}

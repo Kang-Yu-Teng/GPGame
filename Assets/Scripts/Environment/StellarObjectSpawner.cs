@@ -51,6 +51,10 @@ public class StellarObjectSpawner : MonoBehaviour
         newObject.transform.localScale = new Vector3(randSize, randSize, randSize);
         newObject.transform.localPosition = new Vector3(spawnLocation, 7f, -2);
         sr.sortingOrder = 0;
+        newObject.AddComponent(typeof(SelfDestroyer));
+        var sd = newObject.GetComponent<SelfDestroyer>(); 
+        sd.bounds_flag = true;
+        sd.bounds = new float[]{-10,10,10,-10};
 
         GameObject randItem = newObject;
         

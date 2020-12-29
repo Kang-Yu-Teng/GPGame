@@ -360,9 +360,10 @@ MonoBehaviour:
   maxEnergy: 100
   energy: 100
   energyNaturalRecoveryRate: 10
-  energyNaturalLostRate: 0
+  energyNaturalLostRate: 10
+  energyMovingLostRate: 5
   energyModifyRate: 0
-  defaultShootingEnergyConsuming: 20
+  defaultShootingEnergyConsuming: 0
 --- !u!114 &873511851651922439
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -5458652664135814510}
   - component: {fileID: -2553584333823753487}
   - component: {fileID: 9107455343214157074}
+  - component: {fileID: -7785310761644799929}
   m_Layer: 0
   m_Name: BulletPrefab_Network 2
   m_TagString: Untagged
@@ -310,3 +311,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7785310761644799929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7428196229701916301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd45ca9652a1cce47875289524889641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time_flag: 0
+  time: 0
+  bounds_flag: 1
+  bounds:
+  - -5
+  - 5
+  - 5
+  - -3

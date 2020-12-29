@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8257444126700269704}
   - component: {fileID: 8257444126700269705}
   - component: {fileID: -2223739828504209044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fuel_steal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

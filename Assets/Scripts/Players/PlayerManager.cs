@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     public float energy = 100;
     public float energyNaturalRecoveryRate = 10;
     public float energyNaturalLostRate = 0;
+    public float energyMovingLostRate = 1;
     public float energyModifyRate = 0;
     public float defaultShootingEnergyConsuming = 20;
     private Rigidbody2D rb;
@@ -114,6 +115,11 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     }
 
     void Run(){
+
+        if(energy<=0){
+            return;
+        }
+
         Vector3 moveVelocity= Vector3.zero;
         //anim.SetBool("isRunning",false);
 
@@ -124,26 +130,28 @@ public class PlayerManager : MonoBehaviourPunCallbacks
 
             transform.localScale = new Vector3(direction,1,1);
             //anim.SetBool("isRunning",true);
-
+            energy-=energyMovingLostRate*Time.deltaTime;
         }
         if( Input.GetAxisRaw("Horizontal")>0){
             direction= 1;
             moveVelocity = Vector3.right;
             transform.localScale = new Vector3(direction,1,1);
             //anim.SetBool("isRunning",true);
+            energy-=energyMovingLostRate*Time.deltaTime;
         }
         if( Input.GetAxisRaw("Vertical")<0){
             direction= -1;
             moveVelocity = Vector3.down;
             transform.localScale = new Vector3(direction,1,1);
             //anim.SetBool("isRunning",true);
-
+            energy-=energyMovingLostRate*Time.deltaTime;
         }
         if( Input.GetAxisRaw("Vertical")>0){
             direction= 1;
             moveVelocity = Vector3.up;
             transform.localScale = new Vector3(direction,1,1);
             //anim.SetBool("isRunning",true);
+            energy-=energyMovingLostRate*Time.deltaTime;
         }
 
         transform.position+=moveVelocity*movePower*Time.deltaTime;
