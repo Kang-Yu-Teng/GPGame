@@ -37,6 +37,9 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
     private CameraWork _cameraWork;
     private int color = -1;
     //public GameObject lineRend;
+
+    private bool endgame = false;
+
     void Start()
     {
         //lineRend.SetActive(true);
@@ -136,7 +139,11 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
             }
         }
 
-        if(GameObject.FindGameObjectsWithTag("player").Length == 1 && imWin==false && imDie==false)
+        if(GameObject.FindGameObjectsWithTag("player").Length > 1){
+            endgame = true;
+        }
+
+        if(GameObject.FindGameObjectsWithTag("player").Length == 1 && imWin==false && imDie==false && endgame==true)
         {
             imWin = true;
         }
@@ -252,6 +259,9 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
     }
     private void WinGame()
     {
+        if(photonView.IsMine == false){
+            return;
+        }
             GameManager.Instance.winText.SetActive(true);
                 //GameManager.Instance.hintText.SetActive(true);
             GameManager.Instance.leaveButton.SetActive(true);
