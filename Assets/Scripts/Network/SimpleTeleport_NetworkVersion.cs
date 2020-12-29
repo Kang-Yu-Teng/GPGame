@@ -241,7 +241,7 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
     }
     private IEnumerator delDieText()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         GameManager.Instance.dieText.SetActive(false);
 
     }
