@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        // Screen.SetResolution(1920, 1080, true);
         Instance = this;
         PlayerSetup();
         StartGame();

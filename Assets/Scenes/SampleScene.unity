@@ -388,8 +388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundCards:
-  - {fileID: 1292794094}
   - {fileID: 633762397}
+  - {fileID: 1292794094}
   backgroundSpeed: 1
 --- !u!4 &114944021 stripped
 Transform:
@@ -708,8 +708,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundCards:
-  - {fileID: 334104569}
   - {fileID: 1294478677}
+  - {fileID: 334104569}
   backgroundSpeed: 1
 --- !u!1 &291472724
 GameObject:
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 334104570}
   - component: {fileID: 334104571}
   m_Layer: 0
-  m_Name: top
+  m_Name: bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,10 +1197,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.1
-    y: -0.06
+    x: 0
+    y: 0
     width: 1
-    height: 1.48
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65edb05a389d46049a113f98edd6b0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCooldown: 1
+  spawnCooldown: 5
   borders: []
   spawnItem: {fileID: 951530413639563090, guid: 211503423a160ad4b85dc15017f1ce07, type: 3}
   spawnItems:
@@ -1685,7 +1685,7 @@ GameObject:
   - component: {fileID: 633762398}
   - component: {fileID: 633762399}
   m_Layer: 0
-  m_Name: bot
+  m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3064,7 +3064,7 @@ GameObject:
   - component: {fileID: 1292794095}
   - component: {fileID: 1292794096}
   m_Layer: 0
-  m_Name: top
+  m_Name: bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3211,7 +3211,7 @@ GameObject:
   - component: {fileID: 1294478678}
   - component: {fileID: 1294478679}
   m_Layer: 0
-  m_Name: bot
+  m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
