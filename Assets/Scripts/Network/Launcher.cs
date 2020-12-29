@@ -4,6 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -149,6 +151,11 @@ public class Launcher : MonoBehaviourPunCallbacks
                 PhotonNetwork.GameVersion = gameVersion;
             }
         }
+
+        public void GotoMenu(){
+            SceneManager.LoadScene("MainMenu");
+        }
+
     #endregion
 
 

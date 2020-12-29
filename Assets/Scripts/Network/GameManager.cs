@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject playerSpawnLocation;
     public GameObject itembar;
     public GameObject energybar;
+    
     public ItemDatabaseObject database;
     //public InventoryObject playerInventory;
     //public GameObject player;
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     private GameObject spaceShip;
     public GameObject leaveButton;
     public GameObject dieText;
+    public GameObject winText;
+
     public GameObject[] dieImages;
     public float gravity = 0.5F;
     private GameObject[] Players;

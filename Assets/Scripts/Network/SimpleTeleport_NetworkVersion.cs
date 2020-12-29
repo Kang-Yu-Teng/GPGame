@@ -29,6 +29,9 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
     private Color characterColor = Color.blue;
     public BoxCollider2D m_Collider;
     public bool imDie = false;
+    
+    public bool imWin = false;
+    private bool winSwitch = false;
     private GameObject[] Players;
     private int watchingPlayer = 0;
     private CameraWork _cameraWork;
@@ -133,7 +136,13 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
             }
         }
 
-
+        if(GameObject.FindGameObjectsWithTag("player").Length == 1 && imWin==false && imDie==false)
+        {
+            imWin = true;
+        }
+        if(imWin && !winSwitch){
+            WinGame();
+        }
         
 
     }
@@ -219,15 +228,17 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
         if ( (Collider.gameObject.name == "death_zone" || Collider.gameObject.name == "_lack_hole(Clone)") && photonView.IsMine)
         {
             imDie = true;
-            GameManager.Instance.dieText.SetActive(true);
-            //GameManager.Instance.hintText.SetActive(true);
-            StartCoroutine(delDieText());
+            if(imWin==false){
+                GameManager.Instance.dieText.SetActive(true);
+                //GameManager.Instance.hintText.SetActive(true);
+                StartCoroutine(delDieText());
+            }
             
             Destroy(this.gameObject.GetComponent<PlayerManager>());
             Destroy(this.gameObject.GetComponent<PhotonRigidbody2DView>());
             Destroy(this.gameObject.GetComponent<Rigidbody2D>());
-            Destroy(this.gameObject.transform.GetChild(0).gameObject);
-            //PhotonNetwork.Destroy(this.gameObject);
+            //Destroy(this.gameObject.transform.GetChild(0).gameObject);
+            PhotonNetwork.Destroy(this.gameObject);
             GameManager.Instance.leaveButton.SetActive(true);
             //Players = GameObject.FindGameObjectsWithTag("player");
         }
@@ -239,10 +250,24 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
 
         //}
     }
+    private void WinGame()
+    {
+            GameManager.Instance.winText.SetActive(true);
+                //GameManager.Instance.hintText.SetActive(true);
+            GameManager.Instance.leaveButton.SetActive(true);
+
+                StartCoroutine(delWinText());
+    }
     private IEnumerator delDieText()
     {
         yield return new WaitForSeconds(10f);
         GameManager.Instance.dieText.SetActive(false);
+
+    }
+       private IEnumerator delWinText()
+    {
+        yield return new WaitForSeconds(10f);
+        GameManager.Instance.winText.SetActive(false);
 
     }
     void OnTriggerEnter2D(Collider2D other)

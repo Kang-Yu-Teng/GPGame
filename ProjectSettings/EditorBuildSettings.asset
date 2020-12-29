@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3dd89c38ee2783f4cb90c7a604980ab1
+  - enabled: 1
     path: Assets/Scenes/Launcher.unity
     guid: ab571995c2640a847ac8338f6735f155
   - enabled: 1
@@ -14,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoomForNetwork.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/FightRoom.unity
-    guid: 8a7312378124cb5489c906c0c59ff851
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 28d3471a26cd676478ec0ce27b3f6da7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
