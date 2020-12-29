@@ -35,7 +35,7 @@ public class ObjectSpawner : MonoBehaviourPunCallbacks
                     nextSpawnTime = Time.time + spawnCooldown;
                 }
                 if(Time.time >= nextItemSpawnTime) {
-                    int itemIdx = Random.Range(0, spawnItems.Length-1);
+                    int itemIdx = Random.Range(0, spawnItems.Length);
                     SpawnRandomItem(itemIdx);
                     nextItemSpawnTime = Time.time + spawnCooldown;
                 }

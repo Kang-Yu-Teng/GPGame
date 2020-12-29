@@ -216,7 +216,7 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
     void OnCollisionEnter2D(Collision2D Collider)
     {
         //print("A:" + Collider.gameObject.name); //印出A:碰撞對象的名字
-        if (Collider.gameObject.name == "death_zone" && photonView.IsMine)
+        if ( (Collider.gameObject.name == "death_zone" || Collider.gameObject.name == "_lack_hole(Clone)") && photonView.IsMine)
         {
             imDie = true;
             GameManager.Instance.dieText.SetActive(true);
@@ -226,7 +226,7 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
             Destroy(this.gameObject.GetComponent<PlayerManager>());
             Destroy(this.gameObject.GetComponent<PhotonRigidbody2DView>());
             Destroy(this.gameObject.GetComponent<Rigidbody2D>());
-            
+            Destroy(this.gameObject.transform.GetChild(0).gameObject);
             //PhotonNetwork.Destroy(this.gameObject);
             GameManager.Instance.leaveButton.SetActive(true);
             //Players = GameObject.FindGameObjectsWithTag("player");
@@ -241,7 +241,7 @@ public class SimpleTeleport_NetworkVersion : MonoBehaviourPunCallbacks, IPunInst
     }
     private IEnumerator delDieText()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         GameManager.Instance.dieText.SetActive(false);
 
     }
