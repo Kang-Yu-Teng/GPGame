@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 609631019}
   - component: {fileID: -5432856855498517880}
   - component: {fileID: 7928996640597284876}
-  - component: {fileID: 3621064290144411756}
+  - component: {fileID: -4724115581910617734}
+  - component: {fileID: 2502367608199782300}
   m_Layer: 0
   m_Name: meteorite
   m_TagString: EnvironmentObject
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8dcfedcad3c659458dab5ea51ecb6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   meteorParticles: {fileID: 4368067018957938596, guid: 57e8cb7955c5a3640b5660ad6cdd2140, type: 3}
 --- !u!114 &-5432856855498517880
 MonoBehaviour:
@@ -87,7 +88,28 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
---- !u!61 &3621064290144411756
+--- !u!50 &-4724115581910617734
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951530413639563090}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &2502367608199782300
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4}
+  m_Size: {x: 0.35, y: 0.35}
   m_EdgeRadius: 0
 --- !u!1001 &2486728586589785813
 PrefabInstance:
@@ -172,8 +194,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: meteor
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3315521201846116127, guid: 6324e7d714b7b7445a3854d69d0c7420, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6324e7d714b7b7445a3854d69d0c7420, type: 3}
 --- !u!4 &1849733791023959097 stripped
 Transform:
